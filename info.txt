@@ -1,3 +1,9 @@
+Deploy =========================================================
+source: github/thong20/ReactJS/clone-01
+host: netlify.com
+domain: https://cmphong.tk
+
+
 Resolution Bootstrap ==========================================
 Devices             Breakpoint            Class     Dimensions
 --------------------------------------------------------------
