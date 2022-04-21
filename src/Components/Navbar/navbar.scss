@@ -1,0 +1,152 @@
+@use '../../AppTheme' as theme;
+
+#Navbar{
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  .blur{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .15);
+    backdrop-filter: blur(10px);
+  }
+  .nav{
+    // position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: #00000000;
+    color: theme.$colorFontLight;
+    
+    // blur
+
+
+    
+    .logo{
+      margin-left: 20px;
+      width: 100px;
+      // border: 1px solid red; // TEST
+      img{
+        object-fit: contain;
+      }
+    }
+
+    .menu{
+      display: flex;
+      .nav-items{
+        .nav-item{
+          display: grid;
+          text-align: center;
+          padding: 5px 20px;
+          
+          a{
+            color: theme.$colorFontGray;
+            padding: 5px;
+          }
+          a.active{
+            border-bottom: 2px solid theme.$colorBgPrimary
+          }
+        }
+        button{
+          display: none;
+        }
+      }
+      .nav-btn{
+        width: 100px;
+        .menu-btn{
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: space-evenly;
+          align-items: center;
+          background: none;
+          border: none;
+          cursor: pointer;
+          .text{
+            color: theme.$colorFontGray;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+          }
+          .line1,
+          .line2,
+          .line3{
+            width: 25px;
+            height: 3px;
+            background: theme.$colorFontGray;
+            border-radius: 4px;
+          }
+          .line2{
+            margin: 4px 0;
+          }
+          
+        }
+        
+      }
+    }
+
+    
+    
+  }
+
+  
+  // TABLET ==========================
+  @media screen and (max-width: 992px){
+    .nav{
+      .menu{
+        .nav-items{
+          // display: none;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          top: 100vh;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, .15);
+          backdrop-filter: blur(10px);
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5rem;
+          font-weight: lighter;
+          transition: top .6s ease-in-out;
+
+          button{
+            display: block;
+            cursor: pointer;
+            background-color: theme.$colorBgPrimary;
+            color: theme.$colorFontLight;
+            border: none;
+            padding: 1.5rem;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transform: translateX(-100%);
+            font-size: 1.2rem;
+            outline: none;
+          }
+
+        }
+
+      }
+    }
+    .nav-btn{
+      display: block;
+    }
+  }
+  // DESKTOP ================
+  @media screen and (min-width: 993px) {
+    .nav-items{
+      display: flex;
+    }
+    .nav-btn{
+      display: none;
+    };
+  }
+
+}
+
