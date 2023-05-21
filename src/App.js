@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 // import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Banner from './Components/Banner/Banner'
